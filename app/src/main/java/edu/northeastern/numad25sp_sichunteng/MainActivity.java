@@ -1,6 +1,9 @@
 package edu.northeastern.numad25sp_sichunteng;
 
 import android.os.Bundle;
+import android.widget.Button;
+//import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +23,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //TextView t = findViewById(R.id.helloText);
+        Button b = findViewById(R.id.Button);
+        b.setOnClickListener(v -> Toast.makeText(MainActivity.this, "Name: Sichun Teng\nEmail: teng.sic@northeastern.edu", Toast.LENGTH_LONG).show());
     }
 }
