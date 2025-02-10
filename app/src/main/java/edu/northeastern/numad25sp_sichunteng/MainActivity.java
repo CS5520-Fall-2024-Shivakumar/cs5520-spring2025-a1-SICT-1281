@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,9 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button b2 = findViewById(R.id.Button2);
         b2.setOnClickListener(v -> {
-            // Create an Intent to navigate to QuicCalcActivity
             Intent intent = new Intent(MainActivity.this, QuicCalcActivity.class);
-            startActivity(intent); // Start the new activity
+            startActivity(intent);
         });
     }
 }
