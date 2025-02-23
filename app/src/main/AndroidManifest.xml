@@ -26,6 +26,9 @@
         <activity android:name=".QuicCalcActivity"></activity>
         <activity android:name=".AboutMeActivity" />
         <activity android:name=".ContactsCollectorActivity" />
+        <activity android:name=".Contact" />
+        <activity android:name=".ContactAdapter" />
+        <activity android:name=".EditContact" />
     </application>
 
 </manifest>
