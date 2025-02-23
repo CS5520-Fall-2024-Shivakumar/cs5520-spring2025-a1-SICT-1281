@@ -33,11 +33,11 @@ public class ContactsCollectorActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         FloatingActionButton fab = findViewById(R.id.fabAddContact);
-        fab.setOnClickListener(view -> showAddContactDialog());
+        fab.setOnClickListener(view -> addContact());
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    private void showAddContactDialog() {
+    private void addContact() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View view = getLayoutInflater().inflate(R.layout.add_contact, null);
 
@@ -52,7 +52,10 @@ public class ContactsCollectorActivity extends AppCompatActivity {
                         contactsList.add(new Contact(name, phone));
                         adapter.notifyDataSetChanged();
 
-                        Snackbar.make(recyclerView, "Contact Added!", Snackbar.LENGTH_LONG).show();
+                        Snackbar snackbar=Snackbar.make(recyclerView, "Contact Added!", Snackbar.LENGTH_LONG)
+                                .setAction("OK", v -> {
+                                });
+                        snackbar.show();
                     }
                 })
                 .setNegativeButton("Cancel", null)

@@ -27,6 +27,11 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         this.context = context;
     }
 
+    @Override
+    public int getItemCount() {
+        return contactsList.size();
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -41,22 +46,20 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         holder.phoneNumber.setText(contact.getPhoneNumber());
 
         holder.itemView.setOnClickListener(view -> {
-            Intent callIntent = new Intent(Intent.ACTION_DIAL);
-            callIntent.setData(Uri.parse("tel:" + contact.getPhoneNumber()));
-            context.startActivity(callIntent);
+            Intent call = new Intent(Intent.ACTION_DIAL);
+            call.setData(Uri.parse("tel:" + contact.getPhoneNumber()));
+            context.startActivity(call);
         });
 
         holder.itemView.setOnLongClickListener(view -> {
-            showContactOptionsDialog(position, contact, holder);
+            contactOption(position, contact, holder);
             return true;
         });
     }
-    @Override
-    public int getItemCount() {
-        return contactsList.size(); }
+
 
     @SuppressLint("NotifyDataSetChanged")
-    private void showContactOptionsDialog(int position, Contact contact, ViewHolder holder) {
+    private void contactOption(int position, Contact contact, ViewHolder holder) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Options")
                 .setItems(new String[]{"Edit", "Delete"}, (dialog, which) -> {
@@ -84,7 +87,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView name, phoneNumber;
-
         public ViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.textViewName);

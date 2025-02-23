@@ -20,12 +20,12 @@ public class EditContact extends AppCompatActivity {
         editPhone = findViewById(R.id.editPhone);
 
         Intent intent = getIntent();
-        String originalName = intent.getStringExtra("contact_name");
-        String originalPhone = intent.getStringExtra("contact_phone");
+        String oldName = intent.getStringExtra("contact_name");
+        String oldPhone = intent.getStringExtra("contact_phone");
         position = intent.getIntExtra("position", -1);
 
-        editName.setText(originalName);
-        editPhone.setText(originalPhone);
+        editName.setText(oldName);
+        editPhone.setText(oldPhone);
 
         Button btnSave = findViewById(R.id.btnSave);
         btnSave.setOnClickListener(v -> {
