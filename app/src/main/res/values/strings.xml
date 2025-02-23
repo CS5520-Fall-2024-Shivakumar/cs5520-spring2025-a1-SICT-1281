@@ -17,4 +17,14 @@
     <string name="minus">-</string>
     <string name="delete">x</string>
     <string name="equal">=</string>
+    <string name="email">Email: teng.sic@northeastern.edu</string>
+    <string name="name">Name: Sichun Teng</string>
+    <string name="contacts_collector">Contacts Collector</string>
+    <string name="list_of_contacts">List of Contacts</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="save">Save</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="_000_000_0000">000-000-0000</string>
 </resources>

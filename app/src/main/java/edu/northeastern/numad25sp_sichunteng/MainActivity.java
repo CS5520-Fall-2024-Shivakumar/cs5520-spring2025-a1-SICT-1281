@@ -2,7 +2,6 @@ package edu.northeastern.numad25sp_sichunteng;
 
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.Toast;
 import android.content.Intent;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,13 +22,21 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        //TextView t = findViewById(R.id.helloText);
         Button b = findViewById(R.id.Button);
-        b.setOnClickListener(v -> Toast.makeText(MainActivity.this, "Name: Sichun Teng\nEmail: teng.sic@northeastern.edu", Toast.LENGTH_LONG).show());
+        b.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, AboutMeActivity.class);
+            startActivity(intent);
+        });
 
         Button b2 = findViewById(R.id.Button2);
         b2.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, QuicCalcActivity.class);
+            startActivity(intent);
+        });
+
+        Button b3 = findViewById(R.id.Button3);
+        b3.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, ContactsCollectorActivity.class);
             startActivity(intent);
         });
     }
