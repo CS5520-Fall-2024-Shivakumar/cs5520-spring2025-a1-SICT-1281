@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".QuicCalcActivity"></activity>
+        <activity android:name=".QuicCalcActivity" />
         <activity android:name=".AboutMeActivity" />
         <activity android:name=".ContactsCollectorActivity" />
         <activity android:name=".Contact" />
